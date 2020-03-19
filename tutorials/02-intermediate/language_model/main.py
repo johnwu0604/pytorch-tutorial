@@ -88,7 +88,7 @@ for epoch in range(num_epochs):
 
 # Test the model
 with torch.no_grad():
-    with open('sample.txt', 'w') as f:
+    with open('./outputs/sample.txt', 'w') as f:
         # Set intial hidden ane cell states
         state = (torch.zeros(num_layers, 1, hidden_size).to(device),
                  torch.zeros(num_layers, 1, hidden_size).to(device))
@@ -114,7 +114,7 @@ with torch.no_grad():
             f.write(word)
 
             if (i+1) % 100 == 0:
-                print('Sampled [{}/{}] words and save to {}'.format(i+1, num_samples, 'sample.txt'))
+                print('Sampled [{}/{}] words and save to {}'.format(i+1, num_samples, './outputs/sample.txt'))
 
 # Save the model checkpoints
-torch.save(model.state_dict(), 'model.ckpt')
+torch.save(model.state_dict(), './outputs/model.ckpt')

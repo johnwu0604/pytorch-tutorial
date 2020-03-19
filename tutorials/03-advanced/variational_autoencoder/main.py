@@ -11,7 +11,7 @@ from torchvision.utils import save_image
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Create a directory if not exists
-sample_dir = 'samples'
+sample_dir = './outputs/samples'
 if not os.path.exists(sample_dir):
     os.makedirs(sample_dir)
 

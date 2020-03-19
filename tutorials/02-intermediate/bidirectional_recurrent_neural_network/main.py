@@ -63,7 +63,7 @@ model = BiRNN(input_size, hidden_size, num_layers, num_classes).to(device)
 # Loss and optimizer
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
-    
+
 # Train the model
 total_step = len(train_loader)
 for epoch in range(num_epochs):
@@ -99,4 +99,4 @@ with torch.no_grad():
     print('Test Accuracy of the model on the 10000 test images: {} %'.format(100 * correct / total)) 
 
 # Save the model checkpoint
-torch.save(model.state_dict(), 'model.ckpt')
+torch.save(model.state_dict(), './outputs/model.ckpt')

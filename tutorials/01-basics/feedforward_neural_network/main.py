@@ -6,6 +6,7 @@ import torchvision.transforms as transforms
 
 # Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print('Device: ' + str(torch.cuda.is_available()))
 
 # Hyper-parameters 
 input_size = 784
@@ -91,4 +92,4 @@ with torch.no_grad():
     print('Accuracy of the network on the 10000 test images: {} %'.format(100 * correct / total))
 
 # Save the model checkpoint
-torch.save(model.state_dict(), 'model.ckpt')
+torch.save(model.state_dict(), './outputs/model.ckpt')

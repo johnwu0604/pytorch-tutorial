@@ -112,7 +112,7 @@ class ResNet(nn.Module):
         out = out.view(out.size(0), -1)
         out = self.fc(out)
         return out
-    
+
 model = ResNet(ResidualBlock, [2, 2, 2]).to(device)
 
 
@@ -167,4 +167,4 @@ with torch.no_grad():
     print('Accuracy of the model on the test images: {} %'.format(100 * correct / total))
 
 # Save the model checkpoint
-torch.save(model.state_dict(), 'resnet.ckpt')
+torch.save(model.state_dict(), './outputs/resnet.ckpt')

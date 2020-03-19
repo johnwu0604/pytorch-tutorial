@@ -108,7 +108,7 @@ def main(config):
             denorm = transforms.Normalize((-2.12, -2.04, -1.80), (4.37, 4.46, 4.44))
             img = target.clone().squeeze()
             img = denorm(img).clamp_(0, 1)
-            torchvision.utils.save_image(img, 'output-{}.png'.format(step+1))
+            torchvision.utils.save_image(img, './outputs/output-{}.png'.format(step+1))
 
 
 if __name__ == "__main__":
